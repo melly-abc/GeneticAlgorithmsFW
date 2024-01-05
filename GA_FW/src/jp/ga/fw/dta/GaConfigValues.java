@@ -2,6 +2,12 @@ package jp.ga.fw.dta;
 
 import java.util.Objects;
 
+
+/**
+ * フレームワーク定義DTA
+ * @author nori
+ *
+ */
 public class GaConfigValues {
 	
 	private static GaConfigValues instance = null;
