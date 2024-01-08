@@ -11,11 +11,15 @@ import java.util.Objects;
 public class GaConfigValues {
 	
 	private static GaConfigValues instance = null;
-	
+	//選択（淘汰）発生率
+	private Double incidenceSelection = null;
+
 	//交叉発生率
 	private Double incidenceCrossOver = null;
 	//突然変異発生率
 	private Double incidenceMutation = null;
+	//個体数
+	private Integer num = 0;
 	
 	private GaConfigValues() {}
 	
@@ -60,6 +64,30 @@ public class GaConfigValues {
 		this.incidenceMutation = incidenceMutation;
 	}
 	
+	/**
+	 * 個体数Getter
+	 * @return　個体数
+	 */
+	public Integer getNum() {
+		return num;
+	}
+
+	/**
+	 * 個体数Setter
+	 * @param num　個体数
+	 */
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+	public Double getIncidenceSelection() {
+		return incidenceSelection;
+	}
+
+	public void setIncidenceSelection(Double incidenceSelection) {
+		this.incidenceSelection = incidenceSelection;
+	}
+
 	
 	
 }

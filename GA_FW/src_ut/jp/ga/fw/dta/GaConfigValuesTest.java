@@ -41,9 +41,11 @@ public class GaConfigValuesTest {
 	 */
 	@Test
 	public void testCase03(){
+		Integer expInt = 0;
 		GaConfigValues gaConfig = GaConfigValues.getInstance();
 		assertTrue(Objects.isNull(gaConfig.getIncidenceCrossOver()));
 		assertTrue(Objects.isNull(gaConfig.getIncidenceMutation()));
+		assertEquals(expInt, gaConfig.getNum());
 	}
 	
 	/**
@@ -54,10 +56,13 @@ public class GaConfigValuesTest {
 	public void testCase04(){
 		GaConfigValues gaConfig = GaConfigValues.getInstance();
 		Double exp = 1.0;
+		Integer expInt = 1;
 		gaConfig.setIncidenceCrossOver(exp);
 		gaConfig.setIncidenceMutation(exp);
+		gaConfig.setNum(1);
 		assertEquals(exp, gaConfig.getIncidenceCrossOver());
 		assertEquals(exp, gaConfig.getIncidenceMutation());
+		assertEquals(expInt, gaConfig.getNum());
 	}
 	
 }

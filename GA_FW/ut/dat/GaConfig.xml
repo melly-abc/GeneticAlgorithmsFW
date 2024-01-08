@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GaConfig>
+	<Logic id="test">TEST</Logic>
+	<Logic id="test2">
+		<Test>TEST2</Test>
+	</Logic>
+</GaConfig>

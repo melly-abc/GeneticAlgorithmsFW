@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Config>
+		<Genetic>
+			<!-- フェーズ -->
+			<Logic type="Selection" incidence="1.0">
+				<Class>test</Class>
+			</Logic>
+			<Logic type="CrossOver" incidence="0.1">
+				<Class>test2</Class>
+			</Logic>
+			<Logic type="Mutation" incidence="0.1">
+				<Class>test3</Class>
+			</Logic>
+			<!-- 個体数 -->
+			<Num>5</Num>
+		</Genetic>
+		<Common>
+			<Log>
+				<Output></Output>
+				<Conf></Conf>
+			</Log>
+		</Common>
+</Config>
