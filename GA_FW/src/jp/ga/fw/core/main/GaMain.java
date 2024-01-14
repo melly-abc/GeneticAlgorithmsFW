@@ -1,9 +1,12 @@
 package jp.ga.fw.core.main;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
+import jp.ga.fw.core.Initializable;
+import jp.ga.fw.definition.DomManager;
 import jp.ga.fw.dta.GaConfigValues;
 import jp.ga.fw.dta.Individual;
 
@@ -14,31 +17,11 @@ import jp.ga.fw.dta.Individual;
  *
  */
 public class GaMain {
-	//個体郡
-	private List<Individual> individuals = new ArrayList<>();
-	//設定
-	private GaConfigValues config = GaConfigValues.getInstance();
 	
-	
-	public void main(String[] args) throws Exception {
-		
-		//TODO 仮置き
-		config.setNum(5);
-		
-		this.init();
-		
-		while (true) {
-			//
-		}
-	}
-	
-	private void init() {
-		//TODO 仮置き
-		Function <Double, Double> func = x -> x*x;
-		for (int i = 0; i < config.getNum(); i++) {
-			Individual ind = new Individual(func, Double.valueOf(i));
-			individuals.add(ind);
-		}
+	public static void main(String[] args) throws Exception {
+		RunGeneticAlgorithms ga = new RunGeneticAlgorithms();
+		// FWメインロジック実行
+		ga.run(args);
 	}
 	
 }

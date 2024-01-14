@@ -98,7 +98,7 @@ public class DomManagerTest {
 		dm.load(file);
 		GaConfigValues config = GaConfigValues.getInstance();
 		assertEquals(Double.valueOf(0.1), config.getIncidenceCrossOver());
-		assertEquals(Double.valueOf(1), config.getIncidenceSelection());
+		assertEquals(Double.valueOf(100), config.getIncidenceSelection());
 		assertEquals(Double.valueOf(0.1), config.getIncidenceMutation());
 		assertEquals(Integer.valueOf(5), config.getNum());
 	}

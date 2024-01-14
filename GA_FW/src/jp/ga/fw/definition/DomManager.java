@@ -46,11 +46,6 @@ public class DomManager {
 			}
 		}
 
-		System.out.println(rootChild);
-//		Node childNode = (Node) rootChild.get(0).get(2);
-
-		// List<List<Object>> child = nodeCheck((Element) childNode);
-
 	}
 
 	/**
@@ -109,30 +104,40 @@ public class DomManager {
 	 * 
 	 * @param node
 	 */
-	@SuppressWarnings("unchecked")
 	private void GeneticNodeProcess(List<Node> node) {
 		GaConfigValues config = GaConfigValues.getInstance();
 		for (Node n : node) {
-			System.out.println(">>>" + n.getNodeName());
+
 			NamedNodeMap att = n.getAttributes();
 			
 			if (n.getNodeName().equals("Logic")) {
 				String type = att.getNamedItem("type").getNodeValue();
-				String incidence = att.getNamedItem("incidence").getNodeValue();
+				String incidence = null;
+				if(Objects.nonNull(att.getNamedItem("incidence"))) {
+					incidence = att.getNamedItem("incidence").getNodeValue() ;
+				}
+				String classPath = n.getFirstChild().getFirstChild().getNodeValue();
+				
+				if (type.equals("Init")) {
+					config.setClassPathInit(classPath);
+				}
+				
 				if (type.equals("Selection")) {
 					config.setIncidenceSelection(Double.valueOf(incidence));
-					// System.out.println(">>>"+n.getFirstChild().getFirstChild().getNodeValue());
+					config.setClassPathSelection(classPath);
 				}
 
 				if (type.equals("CrossOver")) {
 					config.setIncidenceCrossOver(Double.valueOf(incidence));
-					// System.out.println(">>>"+n.getFirstChild().getFirstChild().getNodeValue());
+					config.setClassPathCrossOver(classPath);
 				}
 
 				if (type.equals("Mutation")) {
 					config.setIncidenceMutation(Double.valueOf(incidence));
-					// System.out.println(">>>"+n.getFirstChild().getFirstChild().getNodeValue());
+					config.setClassPathMutation(classPath);
 				}
+				
+				
 			}
 			if (n.getNodeName().equals("Num")) {
 				config.setNum(Integer.valueOf(n.getFirstChild().getNodeValue()));

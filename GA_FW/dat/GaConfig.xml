@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Config>
-		<Genetic>
-			<!-- フェーズ -->
-			<Logic type="Selection" incidence="1.0">
+		<Genetic>		
+			<!-- 初期化フェーズ -->
+			<Logic type="Init">
+				<Class>ga.pseudo.initialaize.Initialize</Class>
+			</Logic>
+			<!-- 選択（淘汰）フェーズ -->
+			<Logic type="Selection" incidence="100.0">
 				<Class>test</Class>
 			</Logic>
+			<!-- 交叉フェーズ -->
 			<Logic type="CrossOver" incidence="0.1">
 				<Class>test2</Class>
 			</Logic>
+			<!-- 突然変異フェーズ -->
 			<Logic type="Mutation" incidence="0.1">
 				<Class>test3</Class>
 			</Logic>

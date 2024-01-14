@@ -13,11 +13,51 @@ public class GaConfigValues {
 	private static GaConfigValues instance = null;
 	//選択（淘汰）発生率
 	private Double incidenceSelection = null;
-
 	//交叉発生率
 	private Double incidenceCrossOver = null;
 	//突然変異発生率
 	private Double incidenceMutation = null;
+	//選択（淘汰）クラス
+	private String classPathSelection = null;
+	//交叉クラス
+	private String classPathCrossOver = null;
+	public String getClassPathInit() {
+		return classPathInit;
+	}
+
+	public void setClassPathInit(String classPathInit) {
+		this.classPathInit = classPathInit;
+	}
+
+	//突然変異クラス
+	private String classPathMutation = null;
+	//初期処理クラス
+	private String classPathInit = null;
+	
+	public String getClassPathSelection() {
+		return classPathSelection;
+	}
+
+	public void setClassPathSelection(String classPathSelection) {
+		this.classPathSelection = classPathSelection;
+	}
+
+	public String getClassPathCrossOver() {
+		return classPathCrossOver;
+	}
+
+	public void setClassPathCrossOver(String classPathCrossOver) {
+		this.classPathCrossOver = classPathCrossOver;
+	}
+
+	public String getClassPathMutation() {
+		return classPathMutation;
+	}
+
+	public void setClassPathMutation(String classPathMutation) {
+		this.classPathMutation = classPathMutation;
+	}
+
 	//個体数
 	private Integer num = 0;
 	
