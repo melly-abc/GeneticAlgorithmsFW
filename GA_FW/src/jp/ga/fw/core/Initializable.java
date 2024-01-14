@@ -8,7 +8,7 @@ import java.util.function.Function;
  * 
  * @author nori
  */
-public interface Initializable {
+public interface Initializable{
 	/**
 	 * ‰Šúˆ—’ŠÛƒƒ\ƒbƒh
 	 * 

@@ -13,6 +13,7 @@ public class Individual {
 	//ŒÂ‘Ì‚Ì•]‰¿ŠÖ”
 	private Function<Double, Double> evaluationFunc = null;
 	
+	
 	public Individual(Function<Double, Double> func){
 		evaluationFunc = func;
 	}
